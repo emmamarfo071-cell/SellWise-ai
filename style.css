@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.brand {
+  color: #fcd116;
+}
+
+input[type="file"] {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+button {
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+#captionBox {
+  line-height: 1.6;
+}
+
+img {
+  border: 1px solid #eee;
+}
