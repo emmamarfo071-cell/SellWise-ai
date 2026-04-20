@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SellWise AI</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- HEADER -->
+  <header class="bg-black text-white p-4 flex justify-between items-center">
+    <div>
+      <h1 class="font-black text-xl">
+        Sell<span class="brand">Wise</span>
+      </h1>
+      <p class="text-[10px] text-gray-400">
+        Smart AI Reseller Tool
+      </p>
+    </div>
+
+    <select id="market" class="bg-gray-800 text-xs px-3 py-2 rounded-lg">
+      <option value="GHS">Ghana</option>
+      <option value="NGN">Nigeria</option>
+      <option value="USD">Global</option>
+    </select>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-md mx-auto p-4">
+
+    <!-- Upload Card -->
+    <div class="bg-white p-6 rounded-2xl shadow-lg">
+
+      <h2 class="font-bold text-lg mb-4">
+        Product Analyzer
+      </h2>
+
+      <input
+        type="file"
+        id="productImage"
+        accept="image/*"
+        class="mb-4 w-full"
+      >
+
+      <img
+        id="preview"
+        class="hidden w-full h-60 object-cover rounded-xl mb-4"
+      >
+
+      <button
+        onclick="analyzeProduct()"
+        class="w-full bg-black text-white py-3 rounded-xl font-bold"
+      >
+        Analyze Product
+      </button>
+    </div>
+
+    <!-- Loading -->
+    <p
+      id="loading"
+      class="hidden text-center mt-4 font-semibold"
+    >
+      Analyzing Product...
+    </p>
+
+    <!-- Result -->
+    <section
+      id="resultCard"
+      class="hidden mt-4 bg-white p-5 rounded-2xl shadow-lg space-y-4"
+    >
+
+      <h2
+        id="productName"
+        class="font-bold text-xl"
+      >
+      </h2>
+
+      <!-- Pricing -->
+      <div class="grid grid-cols-2 gap-4">
+
+        <div class="bg-gray-100 p-3 rounded-xl">
+          <p class="text-xs text-gray-500">
+            Market Price
+          </p>
+          <p
+            id="marketPrice"
+            class="font-bold text-lg"
+          >
+          </p>
+        </div>
+
+        <div class="bg-gray-100 p-3 rounded-xl">
+          <p class="text-xs text-gray-500">
+            Recommended Sell Price
+          </p>
+          <p
+            id="sellPrice"
+            class="font-bold text-lg text-blue-600"
+          >
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Caption -->
+      <div>
+        <p class="text-sm font-semibold mb-2">
+          Viral Selling Caption
+        </p>
+
+        <div
+          id="captionBox"
+          class="bg-gray-100 p-4 rounded-xl text-sm"
+        >
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <button
+        onclick="copyCaption()"
+        class="w-full bg-black text-white py-3 rounded-xl font-bold"
+      >
+        Copy Caption
+      </button>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
